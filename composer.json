@@ -1,0 +1,16 @@
+{
+    "name": "bolcom-partnerprogramma-feed-php-example",
+    "description": "Example to process a product-feed xml",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^5.6"
+    },
+    "autoload": {
+      "psr-4": {
+        "feed\\": "src/"
+      },
+      "psr-0": {
+        "feed\\": "tests/"
+      }
+    }
+}
