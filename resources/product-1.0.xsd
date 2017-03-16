@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://config.services.bol.com/schemas/product-1.0.xsd"
+            xmlns:product="http://config.services.bol.com/schemas/product-1.0.xsd"
+            elementFormDefault="qualified">
+
+  <xsd:element name="Product" type="product:Product"/>
+
+  <xsd:complexType name="Product">
+    <xsd:sequence>
+      <xsd:element name="productId" type="product:productId" minOccurs="1"/>
+      <xsd:element name="ean" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="title" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="productUrlNL" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="productUrlBE" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="imageUrl" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="mpn" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="brand" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="familyName" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="subtitle" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="OfferNL" type="product:Offer" minOccurs="0"/>
+      <xsd:element name="OfferBE" type="product:Offer" minOccurs="0"/>
+      <xsd:element name="Gpc" type="product:Gpc" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Category" type="product:Category" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="Properties" type="product:Properties" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Gpc">
+    <xsd:sequence>
+    <xsd:element name="segmentName" type="xsd:string" minOccurs="0"/>
+    <xsd:element name="familyName" type="xsd:string" minOccurs="0"/>
+    <xsd:element name="className" type="xsd:string" minOccurs="0"/>
+    <xsd:element name="brickName" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Category">
+    <xsd:sequence>
+    <xsd:element name="unit" type="xsd:string" minOccurs="0"/>
+    <xsd:element name="category" type="xsd:string" minOccurs="0"/>
+    <xsd:element name="productgroup" type="xsd:string" minOccurs="0"/>
+    <xsd:element name="productsubgroup" type="xsd:string" minOccurs="0"/>
+    <xsd:element name="subsubgroup" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Offer">
+    <xsd:sequence>
+      <xsd:element name="sellingPrice" type="xsd:decimal" minOccurs="0"/>
+      <xsd:element name="shippingCost" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="condition" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="isDeliverable" type="xsd:boolean" nillable="true"/>
+      <xsd:element name="releaseDate" type="xsd:date" minOccurs="0"/>
+      <xsd:element name="listPrice" type="xsd:decimal" minOccurs="0"/>
+      <xsd:element name="ultimateOrderTime" type="xsd:time" minOccurs="0"/>
+      <xsd:element name="maximalDeliveryDay" type="xsd:int" minOccurs="0"/>
+      <xsd:element name="fulfillmentLabel" type="xsd:string" minOccurs="0" />
+      <xsd:element name="sellerType" type="xsd:string" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Properties">
+    <xsd:sequence>
+      <xsd:element name="Property" type="product:Property" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="Property">
+    <xsd:sequence>
+      <xsd:element name="key" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:simpleType name="productId">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

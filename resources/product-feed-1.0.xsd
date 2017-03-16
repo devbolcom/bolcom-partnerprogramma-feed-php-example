@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:product="http://config.services.bol.com/schemas/product-1.0.xsd"
+            xmlns:productfeed="http://config.services.bol.com/schemas/product-feed-1.0.xsd"
+            targetNamespace="http://config.services.bol.com/schemas/product-feed-1.0.xsd"
+            xmlns="http://config.services.bol.com/schemas/product-feed-1.0.xsd"
+            elementFormDefault="qualified">
+
+  <xsd:import namespace="http://config.services.bol.com/schemas/product-1.0.xsd" schemaLocation="product-1.0.xsd"/>
+
+  <xsd:element name="Products" type="productfeed:Products"/>
+
+  <xsd:complexType name="Products">
+    <xsd:sequence>
+      <xsd:element ref="product:Product" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>
