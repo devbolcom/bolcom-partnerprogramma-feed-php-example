@@ -1,6 +1,6 @@
 {
     "name": "bolcom-partnerprogramma-feed-php-example",
-    "description": "Example to process a product-feed xml",
+    "description": "Example to process a Product Feed XML",
     "type": "project",
     "require": {
         "phpunit/phpunit": "^5.6"
